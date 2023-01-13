@@ -1,7 +1,12 @@
 {
-  "tc_id":68,
-  "s_id":69,
-  "name":"TESTII_PURPOSE",
-  "category":"dummy",
-  "type":"GEMJAR"
+  "tc_id": 31503,
+  "s_id": 64,
+  "type": "GEMPYP",
+  "name": "FOR-TESTINGG",
+  "category": "FORLOOOP",
+  "frameworkDefinedData": {
+    "dependency": "GET",
+    "run_flag": "Y"
+  },
+  "source": "JEWEL"
 }

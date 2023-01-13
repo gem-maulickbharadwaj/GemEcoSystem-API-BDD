@@ -6,6 +6,7 @@
   "gemjarUserName": "maulick.b",
   "tagName": "",
   "scenario": "",
+  "feature" : "src/main/resources/features/GemEcoSystem2.feature",
   "gemjarToken": "713f8683-66e6-465d-9f1b-bc071158c5381669698039308",
   "gemjarSubID": "test_id",
   "glueCode": "com.qa.gemini.StepDefinition",
@@ -93,9 +94,10 @@
     "suiteApi": "https://apis-beta.gemecosystem.com/suite",
     "suiteApi2": "https://apis-beta.gemecosystem.com/suite?s_id=999",
     "suiteApi3": "https://apis-beta.gemecosystem.com/suite?pageNo=-1",
-    "testApi": "https://apis-beta.gemecosystem.com/test",
-    "testApi2": "https://apis-beta.gemecosystem.com/test?tc_id=-1",
-    "testApi3": "https://apis-beta.gemecosystem.com/test?tc_id=71",
+    "testApi": "https://apis-beta.gemecosystem.com/test?framework=GEMPYP",
+    "testApiGemjar" : "https://apis-beta.gemecosystem.com/test?framework=GEMJAR",
+    "testApi2": "https://apis-beta.gemecosystem.com/test?framework=GEMPYP?tc_id=777777",
+    "testApi3": "https://apis-beta.gemecosystem.com/test?framework=GEMPYP?s_id=7777799998",
     "testApi4": "https://apis-beta.gemecosystem.com/test?pageNo=-1",
     "dashboardApi": "https://apis-beta.gemecosystem.com/v1/dashboard/count-suite",
     "recentRunApi": "https://apis-beta.gemecosystem.com/v1/dashboard/recent-runs",
@@ -125,6 +127,9 @@
     "azureDeleteTag": "https://apis-beta.gemecosystem.com/v1/az/file/tag",
     "azurePermanentDelete": "https://apis-beta.gemecosystem.com/v1/az/file/delete",
     "azureGetFile": "https://apis-beta.gemecosystem.com/v1/az/download/file",
-    "gitApi" : "https://apis-beta.gemecosystem.com/v1/gemjar/feature/git"
+    "gitApi" : "https://apis-beta.gemecosystem.com/v1/gemjar/feature/git",
+    "gitApiDelete" : "https://apis-beta.gemecosystem.com/v1/gemjar/feature/git?s_id=697",
+    "gitApiDelete2" : "https://apis-beta.gemecosystem.com/v1/gemjar/feature/git?s_id=007",
+    "gitApiDelete3" : "https://apis-beta.gemecosystem.com/v1/gemjar/feature/git?s_id=676"
   }
 }

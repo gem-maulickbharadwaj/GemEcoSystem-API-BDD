@@ -1,8 +1,13 @@
 [
   {
     "s_id": 58,
-    "name": "test#uuid#",
-    "category": "dummy",
-    "type": "GEMJAR"
+    "type": "GEMPYP",
+    "name": "test_backenddd",
+    "category": "ss",
+    "frameworkDefinedData": {
+      "path": "https://apis-beta.gemecosystem.com/company",
+      "run_flag": "Y"
+    },
+    "source": "JEWEL"
   }
 ]

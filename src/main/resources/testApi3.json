@@ -1,6 +1,13 @@
-{
-  "s_id": 76,
-  "name": "dummy68",
-  "category": "dummy",
-  "type": "GEMJAR"
-}
+[
+  {
+    "s_id": 777777,
+    "type": "GEMPYP",
+    "name": "dummy68",
+    "category": "dummy",
+    "frameworkDefinedData": {
+      "path": "https://apis-beta.gemecosystem.com/company",
+      "run_flag": "Y"
+    },
+    "source": "JEWEL"
+  }
+]
