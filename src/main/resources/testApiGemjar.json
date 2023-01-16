@@ -1,0 +1,14 @@
+[
+  {
+    "s_id": 697,
+    "feature": "ss",
+    "name": "ssz",
+    "type": "Scenario",
+    "scenario_steps": [
+      "login"
+    ],
+    "run_flag": "Y",
+    "tags": "ss",
+    "source": "JEWEL"
+  }
+]
