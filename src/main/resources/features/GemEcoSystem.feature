@@ -1,26 +1,26 @@
 Feature: GemEcoSystem-APIs-JV
 
-#  Scenario Outline: Sample-Test
-#    Given Set endpoint and method "<endpoint>" and "<Method>"
-#    Then Verify Status code <Expected_status>
-#    Examples:
-#      | endpoint | Method | Expected_status |
-#      | Gettt    | get    | 200             |
-#
+  Scenario Outline: Sample-Test
+    Given Set endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint | Method | Expected_status |
+      | Gettt    | get    | 200             |
+
 #  Scenario Outline: Get Company
 #    Given Set endpoint and method "<endpoint>" and "<Method>"
 #    Then Verify Status code <Expected_status>
 #    Examples:
 #      | endpoint | Method | Expected_status |
 #      | Getc     | get    | 200             |
-#
+
 #  Scenario Outline: Validate UserName
 #    Given Set endpoint and method "<endpoint>" and "<Method>"
 #    Then Verify Status code <Expected_status>
 #    Examples:
 #      | endpoint | Method | Expected_status |
 #      | Gett     | get    | 200             |
-#
+
 #  Scenario Outline: Validate Username when username does not exists
 #    Given Set endpoint and method "<endpoint>" and "<Method>"
 #    Then Verify Status code <Expected_status>
@@ -28,12 +28,12 @@ Feature: GemEcoSystem-APIs-JV
 #      | endpoint | Method | Expected_status |
 #      | Gett2    | get    | 200             |
 #
-#  Scenario Outline: Get data of suite s-run id not present
-#    Given Authenticate endpoint and method "<endpoint>" and "<Method>"
-#    Then Verify Status code <Expected_status>
-#    Examples:
-#      | endpoint | Method | Expected_status |
-#      | Gettte   | get    | 400             |
+  Scenario Outline: Get data of suite s-run id not present
+    Given Authenticate endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint | Method | Expected_status |
+      | Gettte   | get    | 400             |
 #
 #  Scenario Outline: Get Token
 #    Given Set token endpoint and method "<endpoint>" and "<Method>"
@@ -49,69 +49,69 @@ Feature: GemEcoSystem-APIs-JV
 #      | endpoint | Method | Expected_status |
 #      | Gettoken | get    | 403             |
 #
-#  Scenario Outline: Get Token With Empty Authentication
-#    Given Set Empty token endpoint and method "<endpoint>" and "<Method>"
-#    Then Verify Status code <Expected_status>
-#    Examples:
-#      | endpoint | Method | Expected_status |
-#      | Gettoken | get    | 403             |
-#
-#  Scenario Outline: Login User
-#    Given Set endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-#    Then Verify Status code <Expected_status>
-#    Examples:
-#      | endpoint | Method | Expected_status | SampleName       |
-#      | Login    | Post   | 200             | Login_sampleJson |
-#
-#  Scenario Outline: Login User with wrong credentials
-#    Given Set credentials endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-#    Then Verify Status code <Expected_status>
-#    Examples:
-#      | endpoint | Method | Expected_status | SampleName          |
-#      | Login    | Post   | 400             | loginInvalid_sample |
-#
+  Scenario Outline: Get Token With Empty Authentication
+    Given Set Empty token endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint | Method | Expected_status |
+      | Gettoken | get    | 403             |
+
+  Scenario Outline: Login User
+    Given Set endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint | Method | Expected_status | SampleName       |
+      | Login    | Post   | 200             | Login_sampleJson |
+
+  Scenario Outline: Login User with wrong credentials
+    Given Set credentials endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint | Method | Expected_status | SampleName          |
+      | Login    | Post   | 400             | loginInvalid_sample |
+
 #  Scenario Outline: Login User with Empty Fields
 #    Given Set credentials endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
 #    Then Verify Status code <Expected_status>
 #    Examples:
 #      | endpoint | Method | Expected_status | SampleName        |
 #      | Login    | Post   | 400             | Login3_sampleJson |
-#
+
 #  Scenario Outline: Login User with Empty Body
 #    Given Set credentials endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
 #    Then Verify Status code <Expected_status>
 #    Examples:
 #      | endpoint | Method | Expected_status | SampleName        |
 #      | Login    | Post   | 400             | Login4_sampleJson |
-#
+
 #  Scenario Outline: Change Token
 #    Given Set token endpoint and method "<endpoint>" and "<Method>"
 #    Then Verify Status code <Expected_status>
 #    Examples:
 #      | endpoint  | Method | Expected_status |
 #      | posttoken | Post   | 200             |
-#
-#  Scenario Outline: Change Token When Header is not Given
-#    Given Set Empty token endpoint and method "<endpoint>" and "<Method>"
-#    Then Verify Status code <Expected_status>
-#    Examples:
-#      | endpoint  | Method | Expected_status |
-#      | posttoken | Post   | 403             |
-#
+
+  Scenario Outline: Change Token When Header is not Given
+    Given Set Empty token endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status |
+      | posttoken | Post   | 403             |
+
 #  Scenario Outline: Change Token wih wrong Authentication
 #    Given Set Wrong token endpoint and method "<endpoint>" and "<Method>"
 #    Then Verify Status code <Expected_status>
 #    Examples:
 #      | endpoint  | Method | Expected_status |
 #      | posttoken | Post   | 403             |
-#
-#  Scenario Outline: Insert Test-Suite Using Post APIs
-#    Given Set Suite-API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-#    Then Verify Status code <Expected_status>
-#    Examples:
-#      | endpoint | Method | Expected_status | SampleName        |
-#      | pospo    | Post   | 201             | psuite_sampleJson |
-#
+
+  Scenario Outline: Insert Test-Suite Using Post APIs
+    Given Set Suite-API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint | Method | Expected_status | SampleName        |
+      | pospo    | Post   | 201             | psuite_sampleJson |
+
 #  Scenario Outline: Insert the suite using Post API when S-run-id is already present
 #    Given Set Suite-API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
 #    Then Verify Status code <Expected_status>
@@ -139,29 +139,29 @@ Feature: GemEcoSystem-APIs-JV
 #    Examples:
 #      | endpoint | Method | Expected_status | SampleName         |
 #      | pospo    | Post   | 400             | psuite2_sampleJson |
-#
-#
-#  Scenario Outline: Update the suite using Put API (suitexe case)
-#    Given Update Suite using endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-#    Then Verify Status code <Expected_status>
-#    Examples:
-#      | endpoint | Method | Expected_status | SampleName       |
-#      | putu     | put    | 200             | put_1_sampleJson |
-#
-#  Scenario Outline: Update the suite When S-run-id is not present in Database
-#    Given Update Suite when S-run-id not present using endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-#    Then Verify Status code <Expected_status>
-#    Examples:
-#      | endpoint | Method | Expected_status | SampleName       |
-#      | putu     | put    | 400             | put_2_sampleJson |
-#
-#  Scenario Outline: Update the suite Using Wrong Authentication
-#    Given Update Suite using wrong Authentication using endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-#    Then Verify Status code <Expected_status>
-#    Examples:
-#      | endpoint | Method | Expected_status | SampleName       |
-#      | putu     | put    | 403             | put_2_sampleJson |
-#
+
+
+  Scenario Outline: Update the suite using Put API (suitexe case)
+    Given Update Suite using endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint | Method | Expected_status | SampleName       |
+      | putu     | put    | 200             | put_1_sampleJson |
+
+  Scenario Outline: Update the suite When S-run-id is not present in Database
+    Given Update Suite when S-run-id not present using endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint | Method | Expected_status | SampleName       |
+      | putu     | put    | 400             | put_2_sampleJson |
+
+  Scenario Outline: Update the suite Using Wrong Authentication
+    Given Update Suite using wrong Authentication using endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint | Method | Expected_status | SampleName       |
+      | putu     | put    | 403             | put_2_sampleJson |
+
 #  Scenario Outline: Update the suite without Authentication
 #    Given Update Suite without Authentication using endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
 #    Then Verify Status code <Expected_status>
@@ -994,12 +994,19 @@ Feature: GemEcoSystem-APIs-JV
 #      | endpoint      | Method | Expected_status |
 #      | testApiGemjar | get    | 200             |
 ##
-#  Scenario Outline: If Test Case Details are not found
+#  Scenario Outline: If Test Case Details are not found GEMPYP case
 #    Given Setttz token endpoint and method "<endpoint>" and "<Method>"
 #    Then Verify Status code <Expected_status>
 #    Examples:
 #      | endpoint | Method | Expected_status |
-#      | testApi2 | get    | 400             |
+#      | testApi2 | get    | 200             |
+#
+#  Scenario Outline: If Test Case Details are not found GEMJAR case
+#    Given Setttz token endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint      | Method | Expected_status |
+#      | testApiForGem | get    | 200             |
 ##
 #  Scenario Outline: If the User does not have access to any projects (testApi) GEMPYP case
 #    Given Set user wrong token endpoint and method "<endpoint>" and "<Method>"
@@ -1015,19 +1022,117 @@ Feature: GemEcoSystem-APIs-JV
 #      | endpoint      | Method | Expected_status |
 #      | testApiGemjar | get    | 200             |
 ##
-#  Scenario Outline: If Suite Details are not found (testApi)
+#  Scenario Outline: If Suite Details are not found (testApi) GEMPYP case
 #    Given Set user wrong token endpoint and method "<endpoint>" and "<Method>"
 #    Then Verify Status code <Expected_status>
 #    Examples:
 #      | endpoint | Method | Expected_status |
-#      | testApi3 | get    | 400             |
+#      | testApi3 | get    | 200             |
+#
+#  Scenario Outline: If Suite Details are not found (testApi) GEMJAR case
+#    Given Set user wrong token endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | Method | Expected_status |
+#      | testApiForGem2 | get    | 200             |
 ##
-#  Scenario Outline: If Page No is invalid (testApi)
+#  Scenario Outline: If Page No is invalid (testApi) GEMPYP case
 #    Given Set user wrong token endpoint and method "<endpoint>" and "<Method>"
 #    Then Verify Status code <Expected_status>
 #    Examples:
 #      | endpoint | Method | Expected_status |
-#      | testApi4 | get    | 400             |
+#      | testApi4 | get    | 200             |
+#
+#  Scenario Outline: If Page No is invalid (testApi) GEMJAR case
+#    Given Set user wrong token endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | Method | Expected_status |
+#      | testApiForGem3 | get    | 200             |
+#
+#  Scenario Outline: API to the Test Case in the JSON Format GEMPYP case
+#    Given Set token endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint   | Method | Expected_status |
+#      | jsonApiPyp | get    | 200             |
+#
+#  Scenario Outline: API to the Test Case in the JSON Format GEMJAR case
+#    Given Set token endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint   | Method | Expected_status |
+#      | jsonApiJar | get    | 200             |
+#
+#  Scenario Outline: API to the Test Case in the JSON Format when user has no access GEMPYP case
+#    Given Set user wrong token endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint   | Method | Expected_status |
+#      | jsonApiPyp | get    | 200             |
+#
+#  Scenario Outline: API to the Test Case in the JSON Format when user has no access GEMJAR case
+#    Given Set user wrong token endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint   | Method | Expected_status |
+#      | jsonApiJar | get    | 200             |
+#
+#  Scenario Outline: API to the Test Case in the JSON Format when testcase detail are not found GEMPYP case
+#    Given Set user wrong token endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint    | Method | Expected_status |
+#      | jsonApiPyp1 | get    | 200             |
+#
+#  Scenario Outline: API to the Test Case in the JSON Format when testcase detail are not found GEMJAR case
+#    Given Set user wrong token endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint    | Method | Expected_status |
+#      | jsonApiJar1 | get    | 200             |
+#
+#  Scenario Outline:  API to get the List of Tests in the Application when payload is passed GEMPYP case
+#    Given Set post token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint      | Method | Expected_status | SampleName    |
+#      | testApiForPyp | post   | 200             | testApiForPyp |
+#
+#  Scenario Outline:  API to get the List of Tests in the Application when payload is passed GEMJAR case
+#    Given Set post token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint      | Method | Expected_status | SampleName    |
+#      | testApiForJar | post   | 200             | testApiForPyp |
+#
+#  Scenario Outline:  API to import testcases to another suite  GEMPYP case
+#    Given Set post token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | Method | Expected_status | SampleName     |
+#      | importTestCPyp | post   | 200             | importTestCPyp |
+#
+#  Scenario Outline:  API to import testcases to another suite  GEMJAR case
+#    Given Set post token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | Method | Expected_status | SampleName     |
+#      | importTestCJar | post   | 200             | importTestCJar |
+#
+#  Scenario Outline:  API to import testcases to another suite  GEMPYP case when suite detail are not found
+#    Given Set post token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | Method | Expected_status | SampleName      |
+#      | importTestCPyp | post   | 200             | importTestCPyp2 |
+#
+#  Scenario Outline:  API to import testcases to another suite  GEMJAR case when suite detail are not found
+#    Given Set post token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | Method | Expected_status | SampleName      |
+#      | importTestCJar | post   | 200             | importTestCPyp2 |
 #
 #  Scenario Outline: API to Create the Test case in the Application when Framework is GEMPYP
 #    Given Setttt post array token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
@@ -1127,7 +1232,7 @@ Feature: GemEcoSystem-APIs-JV
 #    Examples:
 #      | endpoint      | Method | Expected_status | SampleName     |
 #      | testApiGemjar | put    | 200             | testApiGemjar5 |
-#
+
 #  Scenario Outline: API to get Suite Status Count
 #    Given Set post token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
 #    Then Verify Status code <Expected_status>
@@ -1191,429 +1296,429 @@ Feature: GemEcoSystem-APIs-JV
 #      | endpoint | Method | Expected_status | SampleName |
 #      | otpApi   | post   | 400             | otp1       |
 #
-  Scenario Outline: (Azure Bucket APIs) File upload
-    Given Set endpoint without usernames "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint       | endpoint1            | Method | SampleName                 | Expected_status |
-      | azureBucketApi | azurePermanentDelete | post   | permanentDelete_sampleJson | 200             |
-
-  Scenario Outline: (Azure Bucket APIs) File upload with s_run
-    Given Set endpoint without usernames "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint               | endpoint1            | Method | SampleName                 | Expected_status |
-      | azureBucketApiWithSRun | azurePermanentDelete | post   | permanentDelete_sampleJson | 200             |
-
-  Scenario Outline: (Azure Bucket APIs) File upload with incorrect s_run
-    Given Set endpoint without usernames "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint                | endpoint1            | Method | SampleName                 | Expected_status |
-      | azureBucketApiWithSRun1 | azurePermanentDelete | post   | permanentDelete_sampleJson | 400             |
-
-  Scenario Outline: (Azure Bucket APIs) File upload with incorrect tag
-    Given Set endpoint without usernames "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint        | endpoint1            | Method | SampleName                 | Expected_status |
-      | azureBucketApi1 | azurePermanentDelete | post   | permanentDelete_sampleJson | 400             |
-
-  Scenario Outline: (Azure Bucket APIs) File upload with Bearer token is not present in username
-    Given Set endpoint without username in Bearer Token "<endpoint>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint       | Expected_status |
-      | azureBucketApi | 403             |
-
-  Scenario Outline: (Azure Bucket APIs) File upload when username is not present in the DataBase
-    Given Set endpoint with username not present in db "<endpoint>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint       | Expected_status |
-      | azureBucketApi | 403             |
-
-  Scenario Outline: (Azure Bucket APIs) File upload by text
-    Given Set endpoint with text "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint        | endpoint1            | Method | SampleName                 | Expected_status |
-      | azureBucketApi2 | azurePermanentDelete | post   | permanentDelete_sampleJson | 200             |
-
-  Scenario Outline: (Azure Bucket APIs) File upload by text with s_run
-    Given Set endpoint with text "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint                | endpoint1            | Method | SampleName                 | Expected_status |
-      | azureBucketApi2WithSrun | azurePermanentDelete | post   | permanentDelete_sampleJson | 200             |
-
-  Scenario Outline: (Azure Bucket APIs) File upload by text with incorrect tag
-    Given Set endpoint with text wrong tag "<endpoint>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint        | Expected_status |
-      | azureBucketApi3 | 400             |
-
-  Scenario Outline: (Azure Bucket APIs) File upload with data with s_run with url and user has no access
-    Given Set posting user wrong token endpoint and method "<endpoint>" and "<Method>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint            | Method | Expected_status |
-      | azureBucketApiCheck | post   | 401             |
-
-  Scenario Outline: (Azure Bucket APIs) File upload by text with wrong bridge token
-    Given Set endpoint with text with wrong BridgeToken "<endpoint>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint        | Expected_status |
-      | azureBucketApi2 | 403             |
-
-  Scenario Outline: (Azure Bucket APIs) File upload by text when Bearer token is not present in username
-    Given Set endpoint with text when BT is not present "<endpoint>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint        | Expected_status |
-      | azureBucketApi2 | 403             |
-
-  Scenario Outline: (Azure Bucket APIs) File upload by text when username is not present in DB
-    Given Set endpoint with text without valid username "<endpoint>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint        | Expected_status |
-      | azureBucketApi2 | 403             |
-
-  Scenario Outline: (Azure Bucket APIs) Give WRITE access of the files to the users
-    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint    | endpoint1       | endpoint2            | Method | Expected_status | SampleName        | SampleName1                | stepName                     |
-      | azureAccess | azureBucketApi2 | azurePermanentDelete | Post   | 200             | Access_sampleJson | permanentDelete_sampleJson | Test to change tag to public |
-
-  Scenario Outline: (Azure Bucket APIs) Give READ access of the files to the users
-    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint     | endpoint1       | endpoint2            | Method | Expected_status | SampleName        | SampleName1                | stepName                     |
-      | azureAccess1 | azureBucketApi2 | azurePermanentDelete | Post   | 200             | Access_sampleJson | permanentDelete_sampleJson | Test to change tag to public |
-
-  Scenario Outline: (Azure Bucket APIs) Remove READ access of the files to the users
-    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint     | endpoint1       | endpoint2            | Method | Expected_status | SampleName        | SampleName1                | stepName                     |
-      | azureAccess2 | azureBucketApi2 | azurePermanentDelete | Post   | 200             | Access_sampleJson | permanentDelete_sampleJson | Test to change tag to public |
-
+#  Scenario Outline: (Azure Bucket APIs) File upload
+#    Given Set endpoint without usernames "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | endpoint1            | Method | SampleName                 | Expected_status |
+#      | azureBucketApi | azurePermanentDelete | post   | permanentDelete_sampleJson | 200             |
+#
+#  Scenario Outline: (Azure Bucket APIs) File upload with s_run
+#    Given Set endpoint without usernames "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint               | endpoint1            | Method | SampleName                 | Expected_status |
+#      | azureBucketApiWithSRun | azurePermanentDelete | post   | permanentDelete_sampleJson | 200             |
+#
+#  Scenario Outline: (Azure Bucket APIs) File upload with incorrect s_run
+#    Given Set endpoint without usernames "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint                | endpoint1            | Method | SampleName                 | Expected_status |
+#      | azureBucketApiWithSRun1 | azurePermanentDelete | post   | permanentDelete_sampleJson | 400             |
+#
+#  Scenario Outline: (Azure Bucket APIs) File upload with incorrect tag
+#    Given Set endpoint without usernames "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint        | endpoint1            | Method | SampleName                 | Expected_status |
+#      | azureBucketApi1 | azurePermanentDelete | post   | permanentDelete_sampleJson | 400             |
+#
+#  Scenario Outline: (Azure Bucket APIs) File upload with Bearer token is not present in username
+#    Given Set endpoint without username in Bearer Token "<endpoint>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | Expected_status |
+#      | azureBucketApi | 403             |
+#
+#  Scenario Outline: (Azure Bucket APIs) File upload when username is not present in the DataBase
+#    Given Set endpoint with username not present in db "<endpoint>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | Expected_status |
+#      | azureBucketApi | 403             |
+#
+#  Scenario Outline: (Azure Bucket APIs) File upload by text
+#    Given Set endpoint with text "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint        | endpoint1            | Method | SampleName                 | Expected_status |
+#      | azureBucketApi2 | azurePermanentDelete | post   | permanentDelete_sampleJson | 200             |
+#
+#  Scenario Outline: (Azure Bucket APIs) File upload by text with s_run
+#    Given Set endpoint with text "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint                | endpoint1            | Method | SampleName                 | Expected_status |
+#      | azureBucketApi2WithSrun | azurePermanentDelete | post   | permanentDelete_sampleJson | 200             |
+#
+#  Scenario Outline: (Azure Bucket APIs) File upload by text with incorrect tag
+#    Given Set endpoint with text wrong tag "<endpoint>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint        | Expected_status |
+#      | azureBucketApi3 | 400             |
+#
+#  Scenario Outline: (Azure Bucket APIs) File upload with data with s_run with url and user has no access
+#    Given Set posting user wrong token endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint            | Method | Expected_status |
+#      | azureBucketApiCheck | post   | 401             |
+#
+#  Scenario Outline: (Azure Bucket APIs) File upload by text with wrong bridge token
+#    Given Set endpoint with text with wrong BridgeToken "<endpoint>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint        | Expected_status |
+#      | azureBucketApi2 | 403             |
+#
+#  Scenario Outline: (Azure Bucket APIs) File upload by text when Bearer token is not present in username
+#    Given Set endpoint with text when BT is not present "<endpoint>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint        | Expected_status |
+#      | azureBucketApi2 | 403             |
+#
+#  Scenario Outline: (Azure Bucket APIs) File upload by text when username is not present in DB
+#    Given Set endpoint with text without valid username "<endpoint>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint        | Expected_status |
+#      | azureBucketApi2 | 403             |
+#
+#  Scenario Outline: (Azure Bucket APIs) Give WRITE access of the files to the users
+#    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint    | endpoint1       | endpoint2            | Method | Expected_status | SampleName        | SampleName1                | stepName                     |
+#      | azureAccess | azureBucketApi2 | azurePermanentDelete | Post   | 200             | Access_sampleJson | permanentDelete_sampleJson | Test to change tag to public |
+#
+#  Scenario Outline: (Azure Bucket APIs) Give READ access of the files to the users
+#    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint     | endpoint1       | endpoint2            | Method | Expected_status | SampleName        | SampleName1                | stepName                     |
+#      | azureAccess1 | azureBucketApi2 | azurePermanentDelete | Post   | 200             | Access_sampleJson | permanentDelete_sampleJson | Test to change tag to public |
+#
+#  Scenario Outline: (Azure Bucket APIs) Remove READ access of the files to the users
+#    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint     | endpoint1       | endpoint2            | Method | Expected_status | SampleName        | SampleName1                | stepName                     |
+#      | azureAccess2 | azureBucketApi2 | azurePermanentDelete | Post   | 200             | Access_sampleJson | permanentDelete_sampleJson | Test to change tag to public |
+#
 #  Scenario Outline: (Azure Bucket APIs) Remove WRITE access of the files to the users
 #    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
 #    Then Verify Status code <Expected_status>
 #    Examples:
 #      | endpoint     | endpoint1       | endpoint2            | Method | Expected_status | SampleName        | SampleName1                | stepName                     |
 #      | azureAccess3 | azureBucketApi2 | azurePermanentDelete | Post   | 200             | Access_sampleJson | permanentDelete_sampleJson | Test to change tag to public |
-
-  Scenario Outline: (Azure Bucket APIs) Give WRITE access of the files to the users when mode provided is incorrect
-    Given Post Suite-API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint     | Method | Expected_status | SampleName        |
-      | azureAccess4 | Post   | 400             | Access_sampleJson |
-
-  Scenario Outline:(Azure Bucket APIs) Remove READ access of the files to the users when the type provided is incorrect
-    Given Post Suite-API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint     | Method | Expected_status | SampleName        |
-      | azureAccess5 | Post   | 400             | Access_sampleJson |
-
-  Scenario Outline: (Azure Bucket APIs) Give WRITE access of the files to the users when Bridge Token is not valid
-    Given Set Post API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint    | Method | Expected_status | SampleName        |
-      | azureAccess | Post   | 403             | Access_sampleJson |
-
-  Scenario Outline: (Azure Bucket APIs) Give WRITE access of the files to the users when username is not found in Bearer token
-    Given Set Post API without BT endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint    | Method | Expected_status | SampleName        |
-      | azureAccess | Post   | 403             | Access_sampleJson |
-
-  Scenario Outline: (Azure Bucket APIs) Give access of the folder to the users
-    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint          | endpoint1       | endpoint2            | Method | Expected_status | SampleName              | SampleName1                | stepName                           |
-      | azureFolderAccess | azureBucketApi2 | azurePermanentDelete | Post   | 200             | folderAccess_sampleJson | permanentDelete_sampleJson | Test to give folder access to user |
-
-  Scenario Outline: (Azure Bucket APIs) Remove access of the folder from the users
-    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint           | endpoint1       | endpoint2            | Method | Expected_status | SampleName              | SampleName1                | stepName                             |
-      | azureFolderAccess2 | azureBucketApi2 | azurePermanentDelete | Post   | 200             | folderAccess_sampleJson | permanentDelete_sampleJson | Test to remove folder access to user |
-
-  Scenario Outline: (Azure Bucket APIs) Remove access of the folder from the users when type provided is incorrect
-    Given Post Suite-API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint           | Method | Expected_status | SampleName              |
-      | azureFolderAccess3 | Post   | 400             | folderAccess_sampleJson |
-
-  Scenario Outline: (Azure Bucket APIs) Give access of the folder to the users when Bridge Token is not valid
-    Given Set Post API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint          | Method | Expected_status | SampleName              |
-      | azureFolderAccess | Post   | 403             | folderAccess_sampleJson |
-
-  Scenario Outline: (Azure Bucket APIs) Give access of the folder to the users when username is not found in Bearer token
-    Given Set Post API without BT endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint          | Method | Expected_status | SampleName              |
-      | azureFolderAccess | Post   | 403             | folderAccess_sampleJson |
-
-  Scenario Outline: (Azure Bucket APIs) Give access of the folder to the users when folder is not present in DB
-    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint          | endpoint1       | endpoint2            | Method | Expected_status | SampleName | SampleName1                | stepName                           |
-      | azureFolderAccess | azureBucketApi2 | azurePermanentDelete | Post   | 206             | dbAccess   | permanentDelete_sampleJson | Test to give folder access to user |
-
+#
+#  Scenario Outline: (Azure Bucket APIs) Give WRITE access of the files to the users when mode provided is incorrect
+#    Given Post Suite-API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint     | Method | Expected_status | SampleName        |
+#      | azureAccess4 | Post   | 400             | Access_sampleJson |
+#
+#  Scenario Outline:(Azure Bucket APIs) Remove READ access of the files to the users when the type provided is incorrect
+#    Given Post Suite-API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint     | Method | Expected_status | SampleName        |
+#      | azureAccess5 | Post   | 400             | Access_sampleJson |
+#
+#  Scenario Outline: (Azure Bucket APIs) Give WRITE access of the files to the users when Bridge Token is not valid
+#    Given Set Post API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint    | Method | Expected_status | SampleName        |
+#      | azureAccess | Post   | 403             | Access_sampleJson |
+#
+#  Scenario Outline: (Azure Bucket APIs) Give WRITE access of the files to the users when username is not found in Bearer token
+#    Given Set Post API without BT endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint    | Method | Expected_status | SampleName        |
+#      | azureAccess | Post   | 403             | Access_sampleJson |
+#
+#  Scenario Outline: (Azure Bucket APIs) Give access of the folder to the users
+#    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint          | endpoint1       | endpoint2            | Method | Expected_status | SampleName              | SampleName1                | stepName                           |
+#      | azureFolderAccess | azureBucketApi2 | azurePermanentDelete | Post   | 200             | folderAccess_sampleJson | permanentDelete_sampleJson | Test to give folder access to user |
+#
+#  Scenario Outline: (Azure Bucket APIs) Remove access of the folder from the users
+#    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint           | endpoint1       | endpoint2            | Method | Expected_status | SampleName              | SampleName1                | stepName                             |
+#      | azureFolderAccess2 | azureBucketApi2 | azurePermanentDelete | Post   | 200             | folderAccess_sampleJson | permanentDelete_sampleJson | Test to remove folder access to user |
+#
+#  Scenario Outline: (Azure Bucket APIs) Remove access of the folder from the users when type provided is incorrect
+#    Given Post Suite-API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint           | Method | Expected_status | SampleName              |
+#      | azureFolderAccess3 | Post   | 400             | folderAccess_sampleJson |
+#
+#  Scenario Outline: (Azure Bucket APIs) Give access of the folder to the users when Bridge Token is not valid
+#    Given Set Post API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint          | Method | Expected_status | SampleName              |
+#      | azureFolderAccess | Post   | 403             | folderAccess_sampleJson |
+#
+#  Scenario Outline: (Azure Bucket APIs) Give access of the folder to the users when username is not found in Bearer token
+#    Given Set Post API without BT endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint          | Method | Expected_status | SampleName              |
+#      | azureFolderAccess | Post   | 403             | folderAccess_sampleJson |
+#
+#  Scenario Outline: (Azure Bucket APIs) Give access of the folder to the users when folder is not present in DB
+#    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint          | endpoint1       | endpoint2            | Method | Expected_status | SampleName | SampleName1                | stepName                           |
+#      | azureFolderAccess | azureBucketApi2 | azurePermanentDelete | Post   | 206             | dbAccess   | permanentDelete_sampleJson | Test to give folder access to user |
+#
 #  Scenario Outline: (Azure Bucket APIs) Remove access of the folder from the users when folder is not present in DB
 #    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
 #    Then Verify Status code <Expected_status>
 #    Examples:
 #      | endpoint           | endpoint1       | endpoint2            | Method | Expected_status | SampleName | SampleName1                | stepName                             |
 #      | azureFolderAccess2 | azureBucketApi2 | azurePermanentDelete | Post   | 206             | dbAccess   | permanentDelete_sampleJson | Test to remove folder access to user |
-
-  Scenario Outline: (Azure Bucket APIs) Change tag to public
-    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint       | endpoint1       | endpoint2            | Method | Expected_status | SampleName           | SampleName1                | stepName                     |
-      | azureChangeTag | azureBucketApi2 | azurePermanentDelete | Post   | 200             | publicTag_sampleJson | permanentDelete_sampleJson | Test to change tag to public |
-
-  Scenario Outline: (Azure Bucket APIs) Change tag to private
-    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint       | endpoint1       | endpoint2            | Method | Expected_status | SampleName            | SampleName1                | stepName                     |
-      | azureChangeTag | azureBucketApi2 | azurePermanentDelete | Post   | 200             | privateTag_sampleJson | permanentDelete_sampleJson | Test to change tag to public |
-
-  Scenario Outline: (Azure Bucket APIs) Change tag to public when Bridge Token is not valid
-    Given Set Post API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint       | Method | Expected_status | SampleName           |
-      | azureChangeTag | Post   | 403             | publicTag_sampleJson |
-
-  Scenario Outline: (Azure Bucket APIs) Change tag to public when username is not found in Bearer token
-    Given Set Post API without BT endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint       | Method | Expected_status | SampleName           |
-      | azureChangeTag | Post   | 403             | publicTag_sampleJson |
-
-  Scenario Outline: (Azure Bucket APIs) Change tag to public when tag provided is incorrect
-    Given Post Suite-API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint       | Method | Expected_status | SampleName            |
-      | azureChangeTag | Post   | 206             | publicTag2_sampleJson |
-
-  Scenario Outline: (Azure Bucket APIs) Moving the files to the recycle bin
-    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint       | endpoint1       | endpoint2            | Method | Expected_status | SampleName           | SampleName1                | stepName                     |
-      | azureDeleteTag | azureBucketApi2 | azurePermanentDelete | Post   | 200             | deleteTag_sampleJson | permanentDelete_sampleJson | Test to change tag to public |
-
-  Scenario Outline: (Azure Bucket APIs) Moving the files to the recycle bin when Bridge Token is not valid
-    Given Set Post API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint       | Method | Expected_status | SampleName           |
-      | azureDeleteTag | Post   | 403             | deleteTag_sampleJson |
-
-  Scenario Outline: (Azure Bucket APIs) Moving the files to the recycle bin when username is not found in Bearer token
-    Given Set Post API without BT endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint       | Method | Expected_status | SampleName           |
-      | azureDeleteTag | Post   | 403             | deleteTag_sampleJson |
-
-  Scenario Outline: (Azure Bucket APIs) Moving the files to the recycle bin when tag provided is incorrect
-    Given Post Suite-API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint       | Method | Expected_status | SampleName            |
-      | azureDeleteTag | Post   | 206             | deleteTag2_sampleJson |
-
-  Scenario Outline: (Azure Bucket APIs) Moving the files to the recycle bin when file name is not in DB
-    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint       | endpoint1       | endpoint2            | Method | Expected_status | SampleName     | SampleName1                | stepName                     |
-      | azureDeleteTag | azureBucketApi2 | azurePermanentDelete | Post   | 206             | azureDeleteTag | permanentDelete_sampleJson | Test to change tag to public |
-
-#      ####################### Bucket APIs-7 ###################################
 #
-#  Scenario Outline:Get the file from recycle bin
+#  Scenario Outline: (Azure Bucket APIs) Change tag to public
 #    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
 #    Then Verify Status code <Expected_status>
 #    Examples:
-#      | endpoint  | endpoint1       | endpoint2            | Method | Expected_status | SampleName            | SampleName1                | stepName                     |
-#      | deleteTag | azureBucketApi2 | azurePermanentDelete | Post   | 200             | deleteTag3_sampleJson | permanentDelete_sampleJson | Test to change tag to public |
-
-  Scenario Outline: (Azure Bucket APIs) Deleting the Files Permanently
-    Given Post Suite-API endpointt and methodd and SampleNamee and step "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>" and "<stepName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint             | endpoint1       | Method | Expected_status | SampleName                 | stepName                               |
-      | azurePermanentDelete | azureBucketApi2 | Post   | 200             | permanentDelete_sampleJson | Test to Deleting the Files Permanently |
-
-  Scenario Outline: (Azure Bucket APIs) Deleting the Files Permanently when Bridge Token is not valid
-    Given Set Post API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint             | Method | Expected_status | SampleName                 |
-      | azurePermanentDelete | Post   | 403             | permanentDelete_sampleJson |
-
-  Scenario Outline: (Azure Bucket APIs) Deleting the Files Permanently when username is not found in Bearer token
-    Given Set Post API without BT endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint             | Method | Expected_status | SampleName                 |
-      | azurePermanentDelete | Post   | 403             | permanentDelete_sampleJson |
-
-  Scenario Outline: (Azure Bucket APIs) Deleting the Files Permanently when file is not in DB
-    Given Post Suite-API endpointt and methodd and SampleNamee and step "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>" and "<stepName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint             | endpoint1       | Method | Expected_status | SampleName        | stepName                               |
-      | azurePermanentDelete | azureBucketApi2 | Post   | 206             | azurePermanentDel | Test to Deleting the Files Permanently |
-
-  Scenario Outline: (Azure Bucket APIs) Get the Files when files are public
-    Given Get files by settingg Authentication: endpoint and method "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<Method1>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint     | endpoint1       | endpoint2            | Method | Method1 | SampleName                 | Expected_status |
-      | azureGetFile | azureBucketApi2 | azurePermanentDelete | get    | post    | permanentDelete_sampleJson | 200             |
-
-  Scenario Outline: (Azure Bucket APIs) Get the Files when it is private with Authentication
-    Given Get files by settingg Authentication: endpoints and methods "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<endpoint3>" and "<Method>" and "<Method1>" and "<SampleName>" and "<SampleName1>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint     | endpoint1       | endpoint2            | endpoint3      | Method | Method1 | SampleName                 | SampleName1           | Expected_status |
-      | azureGetFile | azureBucketApi2 | azurePermanentDelete | azureChangeTag | get    | post    | permanentDelete_sampleJson | privateTag_sampleJson | 200             |
-
-  Scenario Outline: (Azure Bucket APIs) Get the Files when username is not found in token and file is private.
-    Given Get file by setting endpoint and method "<endpoint>" and "<Method>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint     | Method | Expected_status |
-      | azureGetFile | get    | 404             |
-
-  Scenario Outline: (Azure Bucket APIs) Get the Files when file is in recycle bin.
-    Given Get file by setting Authentication, endpoint and method "<endpoint>" and "<Method>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint     | Method | Expected_status |
-      | azureGetFile | get    | 404             |
-
-  Scenario Outline: (Azure Bucket APIs) Get the Files when file not found
-    Given Get file by setting Authentication, endpoint and method "<endpoint>" and "<Method>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint     | Method | Expected_status |
-      | azureGetFile | get    | 404             |
-
-  Scenario Outline: (Azure Bucket APIs) Get the Files when file is private and user not have permission to see it.
-    Given Get file by setting Authentication, endpoint and method "<endpoint>" and "<Method>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint     | Method | Expected_status |
-      | azureGetFile | get    | 404             |
-
-  Scenario Outline: API to import GemJar Test Cases from git
-    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint | Method | Expected_status | SampleName |
-      | gitApi   | post   | 201             | gitSample  |
-
-  Scenario Outline: API to import GemJar Test Cases from git when suite does not exist
-    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint | Method | Expected_status | SampleName |
-      | gitApi   | post   | 200             | gitSample2 |
-
-  Scenario Outline: API to import GemJar Test Cases from git when user does not have write access to the project
-    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint | Method | Expected_status | SampleName |
-      | gitApi   | post   | 200             | gitSample3 |
-
-  Scenario Outline: API to import GemJar Test Cases from git when url provided is wrong
-    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint | Method | Expected_status | SampleName |
-      | gitApi   | post   | 200             | gitSample4 |
-
-  Scenario Outline: API to update import GemJar Test Cases from git
-    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint | Method | Expected_status | SampleName |
-      | gitApi   | put    | 200             | gitSample  |
-
-  Scenario Outline: API to update GemJar Test Cases from git
-    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint | Method | Expected_status | SampleName |
-      | gitApi   | put    | 200             | gitSample  |
-
-  Scenario Outline: API to update GemJar Test Cases from git when suite does not exist
-    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint | Method | Expected_status | SampleName |
-      | gitApi   | put    | 200             | gitSample2 |
-
-  Scenario Outline: API to update GemJar Test Cases from git when user does not have write access to the project
-    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint | Method | Expected_status | SampleName |
-      | gitApi   | put    | 200             | gitSample3 |
-
-  Scenario Outline: API to update GemJar Test Cases from git when url provided is wrong
-    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint | Method | Expected_status | SampleName |
-      | gitApi   | put    | 200             | gitSample4 |
-
-  Scenario Outline: API to delete import GemJar Test Cases from git
-    Given Set token endpoint and method "<endpoint>" and "<Method>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint     | Method | Expected_status |
-      | gitApiDelete | delete | 200             |
-
-  Scenario Outline: API to delete import GemJar Test Cases from git when user does not have access
-    Given Set token endpoint and method "<endpoint>" and "<Method>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint      | Method | Expected_status |
-      | gitApiDelete3 | delete | 200             |
-
-
+#      | endpoint       | endpoint1       | endpoint2            | Method | Expected_status | SampleName           | SampleName1                | stepName                     |
+#      | azureChangeTag | azureBucketApi2 | azurePermanentDelete | Post   | 200             | publicTag_sampleJson | permanentDelete_sampleJson | Test to change tag to public |
+#
+#  Scenario Outline: (Azure Bucket APIs) Change tag to private
+#    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | endpoint1       | endpoint2            | Method | Expected_status | SampleName            | SampleName1                | stepName                     |
+#      | azureChangeTag | azureBucketApi2 | azurePermanentDelete | Post   | 200             | privateTag_sampleJson | permanentDelete_sampleJson | Test to change tag to public |
+#
+#  Scenario Outline: (Azure Bucket APIs) Change tag to public when Bridge Token is not valid
+#    Given Set Post API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | Method | Expected_status | SampleName           |
+#      | azureChangeTag | Post   | 403             | publicTag_sampleJson |
+#
+#  Scenario Outline: (Azure Bucket APIs) Change tag to public when username is not found in Bearer token
+#    Given Set Post API without BT endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | Method | Expected_status | SampleName           |
+#      | azureChangeTag | Post   | 403             | publicTag_sampleJson |
+#
+#  Scenario Outline: (Azure Bucket APIs) Change tag to public when tag provided is incorrect
+#    Given Post Suite-API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | Method | Expected_status | SampleName            |
+#      | azureChangeTag | Post   | 206             | publicTag2_sampleJson |
+#
+#  Scenario Outline: (Azure Bucket APIs) Moving the files to the recycle bin
+#    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | endpoint1       | endpoint2            | Method | Expected_status | SampleName           | SampleName1                | stepName                     |
+#      | azureDeleteTag | azureBucketApi2 | azurePermanentDelete | Post   | 200             | deleteTag_sampleJson | permanentDelete_sampleJson | Test to change tag to public |
+#
+#  Scenario Outline: (Azure Bucket APIs) Moving the files to the recycle bin when Bridge Token is not valid
+#    Given Set Post API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | Method | Expected_status | SampleName           |
+#      | azureDeleteTag | Post   | 403             | deleteTag_sampleJson |
+#
+#  Scenario Outline: (Azure Bucket APIs) Moving the files to the recycle bin when username is not found in Bearer token
+#    Given Set Post API without BT endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | Method | Expected_status | SampleName           |
+#      | azureDeleteTag | Post   | 403             | deleteTag_sampleJson |
+#
+#  Scenario Outline: (Azure Bucket APIs) Moving the files to the recycle bin when tag provided is incorrect
+#    Given Post Suite-API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | Method | Expected_status | SampleName            |
+#      | azureDeleteTag | Post   | 206             | deleteTag2_sampleJson |
+#
+#  Scenario Outline: (Azure Bucket APIs) Moving the files to the recycle bin when file name is not in DB
+#    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint       | endpoint1       | endpoint2            | Method | Expected_status | SampleName     | SampleName1                | stepName                     |
+#      | azureDeleteTag | azureBucketApi2 | azurePermanentDelete | Post   | 206             | azureDeleteTag | permanentDelete_sampleJson | Test to change tag to public |
+#
+##      ####################### Bucket APIs-7 ###################################
+##
+##  Scenario Outline:Get the file from recycle bin
+##    Given Post Suite-API endpoint and method and SampleName and step "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<stepName>"
+##    Then Verify Status code <Expected_status>
+##    Examples:
+##      | endpoint  | endpoint1       | endpoint2            | Method | Expected_status | SampleName            | SampleName1                | stepName                     |
+##      | deleteTag | azureBucketApi2 | azurePermanentDelete | Post   | 200             | deleteTag3_sampleJson | permanentDelete_sampleJson | Test to change tag to public |
+#
+#  Scenario Outline: (Azure Bucket APIs) Deleting the Files Permanently
+#    Given Post Suite-API endpointt and methodd and SampleNamee and step "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>" and "<stepName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint             | endpoint1       | Method | Expected_status | SampleName                 | stepName                               |
+#      | azurePermanentDelete | azureBucketApi2 | Post   | 200             | permanentDelete_sampleJson | Test to Deleting the Files Permanently |
+#
+#  Scenario Outline: (Azure Bucket APIs) Deleting the Files Permanently when Bridge Token is not valid
+#    Given Set Post API endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint             | Method | Expected_status | SampleName                 |
+#      | azurePermanentDelete | Post   | 403             | permanentDelete_sampleJson |
+#
+#  Scenario Outline: (Azure Bucket APIs) Deleting the Files Permanently when username is not found in Bearer token
+#    Given Set Post API without BT endpoint and method and SampleName "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint             | Method | Expected_status | SampleName                 |
+#      | azurePermanentDelete | Post   | 403             | permanentDelete_sampleJson |
+#
+#  Scenario Outline: (Azure Bucket APIs) Deleting the Files Permanently when file is not in DB
+#    Given Post Suite-API endpointt and methodd and SampleNamee and step "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>" and "<stepName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint             | endpoint1       | Method | Expected_status | SampleName        | stepName                               |
+#      | azurePermanentDelete | azureBucketApi2 | Post   | 206             | azurePermanentDel | Test to Deleting the Files Permanently |
+#
+#  Scenario Outline: (Azure Bucket APIs) Get the Files when files are public
+#    Given Get files by settingg Authentication: endpoint and method "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<Method1>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint     | endpoint1       | endpoint2            | Method | Method1 | SampleName                 | Expected_status |
+#      | azureGetFile | azureBucketApi2 | azurePermanentDelete | get    | post    | permanentDelete_sampleJson | 200             |
+#
+#  Scenario Outline: (Azure Bucket APIs) Get the Files when it is private with Authentication
+#    Given Get files by settingg Authentication: endpoints and methods "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<endpoint3>" and "<Method>" and "<Method1>" and "<SampleName>" and "<SampleName1>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint     | endpoint1       | endpoint2            | endpoint3      | Method | Method1 | SampleName                 | SampleName1           | Expected_status |
+#      | azureGetFile | azureBucketApi2 | azurePermanentDelete | azureChangeTag | get    | post    | permanentDelete_sampleJson | privateTag_sampleJson | 200             |
+#
+#  Scenario Outline: (Azure Bucket APIs) Get the Files when username is not found in token and file is private.
+#    Given Get file by setting endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint     | Method | Expected_status |
+#      | azureGetFile | get    | 404             |
+#
+#  Scenario Outline: (Azure Bucket APIs) Get the Files when file is in recycle bin.
+#    Given Get file by setting Authentication, endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint     | Method | Expected_status |
+#      | azureGetFile | get    | 404             |
+#
+#  Scenario Outline: (Azure Bucket APIs) Get the Files when file not found
+#    Given Get file by setting Authentication, endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint     | Method | Expected_status |
+#      | azureGetFile | get    | 404             |
+#
+#  Scenario Outline: (Azure Bucket APIs) Get the Files when file is private and user not have permission to see it.
+#    Given Get file by setting Authentication, endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint     | Method | Expected_status |
+#      | azureGetFile | get    | 404             |
+#
+#  Scenario Outline: API to import GemJar Test Cases from git
+#    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint | Method | Expected_status | SampleName |
+#      | gitApi   | post   | 201             | gitSample  |
+#
+#  Scenario Outline: API to import GemJar Test Cases from git when suite does not exist
+#    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint | Method | Expected_status | SampleName |
+#      | gitApi   | post   | 200             | gitSample2 |
+#
+#  Scenario Outline: API to import GemJar Test Cases from git when user does not have write access to the project
+#    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint | Method | Expected_status | SampleName |
+#      | gitApi   | post   | 200             | gitSample3 |
+#
+#  Scenario Outline: API to import GemJar Test Cases from git when url provided is wrong
+#    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint | Method | Expected_status | SampleName |
+#      | gitApi   | post   | 200             | gitSample4 |
+#
+#  Scenario Outline: API to update import GemJar Test Cases from git
+#    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint | Method | Expected_status | SampleName |
+#      | gitApi   | put    | 200             | gitSample  |
+#
+#  Scenario Outline: API to update GemJar Test Cases from git
+#    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint | Method | Expected_status | SampleName |
+#      | gitApi   | put    | 200             | gitSample  |
+#
+#  Scenario Outline: API to update GemJar Test Cases from git when suite does not exist
+#    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint | Method | Expected_status | SampleName |
+#      | gitApi   | put    | 200             | gitSample2 |
+#
+#  Scenario Outline: API to update GemJar Test Cases from git when user does not have write access to the project
+#    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint | Method | Expected_status | SampleName |
+#      | gitApi   | put    | 200             | gitSample3 |
+#
+#  Scenario Outline: API to update GemJar Test Cases from git when url provided is wrong
+#    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint | Method | Expected_status | SampleName |
+#      | gitApi   | put    | 200             | gitSample4 |
+#
+#  Scenario Outline: API to delete import GemJar Test Cases from git
+#    Given Set token endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint     | Method | Expected_status |
+#      | gitApiDelete | delete | 200             |
+#
+#  Scenario Outline: API to delete import GemJar Test Cases from git when user does not have access
+#    Given Set token endpoint and method "<endpoint>" and "<Method>"
+#    Then Verify Status code <Expected_status>
+#    Examples:
+#      | endpoint      | Method | Expected_status |
+#      | gitApiDelete3 | delete | 200             |
+#
+#
 
 
 
