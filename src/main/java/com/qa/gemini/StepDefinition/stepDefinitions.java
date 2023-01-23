@@ -4,6 +4,7 @@ import com.gemini.generic.reporting.GemTestReporter;
 import com.gemini.generic.reporting.STATUS;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import io.cucumber.messages.types.TestCase;
 import io.restassured.RestAssured;
 import com.gemini.generic.utils.ProjectConfigData;
 import com.qa.gemini.CommonUtils.utils;
@@ -23,6 +24,7 @@ public class stepDefinitions {
     @Given("^Set endpoint and method \"(.*)\" and \"(.*)\"$")
     public void hitApiWithStep(String url, String method) throws Exception {
         status = utils.HitAPI(url, method, "Test for " + method.toUpperCase()).getStatus();
+
     }
 
     @Given("^Authenticate endpoint and method \"(.*)\" and \"(.*)\"$")

@@ -1,36 +1,34 @@
 {
-  "tc_run_id": "#epoch##curr-ddMMyyyyhhmmss#",
+  "tc_run_id": "#uuid#",
   "start_time": "#epoch#",
   "end_time": "#epoch#",
-  "name": "sample_testcase2",
+  "name": "VERIFY_TESTCASE",
   "category": "sample",
-  "status": "PASS",
-  "user": "maulick_test",
-  "machine": "csgeek",
-  "result_file": null,
-  "product_type": "PYGEM",
-  "ignore": false,
-  "miscData": [],
+  "log_file": "VERIFY_TESTCASE_GEMECO-API-PY_PROD_4AB964DA-FE49-4F39-9AF4-5E5D98.log",
+  "status": "#epoch#",
   "steps": [
     {
-      "title": "test",
-      "desc": "testdesc",
+      "Step Name": "test",
+      "Step Description": "desc",
       "status": "PASS"
     },
     {
-      "title": "test1",
-      "desc": "testdesc1",
+      "Step Name": "fail test",
+      "Step Description": "desc",
       "status": "FAIL"
-    },
-    {
-      "title": "test2",
-      "desc": "testdesc2",
-      "status": "EXE"
     }
   ],
-  "s_run_id": "GEMECOSYSTEM_APIS_BETA_B681AD35-95C6-44B7-8375-823903CB9B8A",
-  "run_type": "ON DEMAND",
-  "run_mode": "Windows 10",
-  "invoke_user": "maulick",
-  "base_user": "maulick_b"
+  "machine": "DESKTOP-7R03UF5",
+  "result_file": "-",
+  "product_type": "GEMJAR",
+  "ignore": false,
+  "meta_data": [],
+  "user_defined_data": {
+    "duration": "0.00 sec(s)"
+  },
+  "base_user": "maulick_test",
+  "invoke_user": "maulick_test",
+  "run_type": "ON-DEMAND",
+  "run_mode": "CLI-WINDOWS",
+  "s_run_id": "testsuiteioood"
 }
