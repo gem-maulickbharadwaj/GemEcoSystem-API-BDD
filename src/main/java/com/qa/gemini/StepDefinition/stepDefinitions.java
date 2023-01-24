@@ -208,7 +208,7 @@ public class stepDefinitions {
 
     @Given("^Set endpointt \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\"$")
     public void fileUpload(String url, String url1, String method, String SampleName) throws Exception {
-        status = utils.FileUpload(url, "src/main/resources/Access_sampleJson.json", ProjectConfigData.getProperty("username"), utils.Gettoken2());
+        status = utils.FileUpload(url, "src/main/java/com/qa/gemini/commonUtils/jar.json", ProjectConfigData.getProperty("username"), utils.Gettoken2());
         Map<String, String> headers = new HashMap<>();
         String username = ProjectConfigData.getProperty("username");
         String bt = Gettoken2();
@@ -221,7 +221,7 @@ public class stepDefinitions {
 
     @Given("^Set endpoint with incorrect bridgetoken \"(.*)\"$")
     public void fileUpload2(String url) throws Exception {
-        status = utils.FileUpload(url, "src/main/resources/Access_sampleJson.json", ProjectConfigData.getProperty("username"), utils.Gettoken2() + "maulick");
+        status = utils.FileUpload(url, "src/main/java/com/qa/gemini/commonUtils/jar.json", ProjectConfigData.getProperty("username"), utils.Gettoken2() + "maulick");
     }
 
     @Given("^Set endpoint without username \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\"$")
@@ -229,7 +229,7 @@ public class stepDefinitions {
         String j = token();
         assert j != null;
         String jnew = j.replaceAll("^\"|\"$", "");
-        status = utils.FileUpload2(url, "src/main/resources/Access_sampleJson.json", jnew);
+        status = utils.FileUpload2(url, "src/main/java/com/qa/gemini/commonUtils/jar.json", jnew);
         Map<String, String> headers = new HashMap<>();
         String username = ProjectConfigData.getProperty("username");
         String bt = Gettoken2();
@@ -245,7 +245,7 @@ public class stepDefinitions {
         String j = token();
         assert j != null;
         String jnew = j.replaceAll("^\"|\"$", "");
-        status = utils.AzurefileUpload(url, "src/main/resources/Access_sampleJson.json", jnew);
+        status = utils.AzurefileUpload(url, "src/main/java/com/qa/gemini/commonUtils/jar.json", jnew);
         Map<String, String> headers = new HashMap<>();
         String username = ProjectConfigData.getProperty("username");
         String bt = Gettoken2();
@@ -259,12 +259,12 @@ public class stepDefinitions {
     @Given("^Set endpoint without username in Bearer Token \"(.*)\"$")
     public void fileUpload5(String url) throws Exception {
         String jnew = "";
-        status = utils.FileUpload2(url, "src/main/resources/Access_sampleJson.json", jnew);
+        status = utils.FileUpload2(url, "src/main/java/com/qa/gemini/commonUtils/jar.json", jnew);
     }
 
     @Given("^Set endpoint with username not present in db \"(.*)\"$")
     public void fileUpload4(String url) throws Exception {
-        status = utils.FileUpload(url, "src/main/resources/Access_sampleJson.json", "", utils.Gettoken2());
+        status = utils.FileUpload(url, "src/main/java/com/qa/gemini/commonUtils/jar.json", "", utils.Gettoken2());
     }
 
     @Given("^Set endpoint with text \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\"$")
@@ -436,7 +436,7 @@ public class stepDefinitions {
             headers.put("Authorization", "Bearer " + jnew);
             GemTestReporter.addTestStep("Bearer Token", "Bearer Token: " + jnew, STATUS.INFO);
             Map<String, String> parameters = new HashMap<>();
-            parameters.put("id", "gem-np:MAULICK:Access_sampleJson.json");
+            parameters.put("id", "gem-np:MAULICK:jar.json");
             RestAssured.baseURI = ProjectConfigData.getProperty(url);
             GemTestReporter.addTestStep("Request URL", ProjectConfigData.getProperty(url), STATUS.INFO);
             //  status = RestAssured.given().params(parameters).headers(headers).when().get().getStatusCode();
@@ -460,7 +460,7 @@ public class stepDefinitions {
             headers.put("Authorization", "Bearer " + "");
             GemTestReporter.addTestStep("Bearer Token", "Bearer Token: " + null, STATUS.INFO);
             Map<String, String> parameters = new HashMap<>();
-            parameters.put("id", "gem-np:MAULICK:Access_sampleJson.json");
+            parameters.put("id", "gem-np:MAULICK:jar.json");
             RestAssured.baseURI = ProjectConfigData.getProperty(url);
             GemTestReporter.addTestStep("Request URL", ProjectConfigData.getProperty(url), STATUS.INFO);
             status = RestAssured.given().params(parameters).when().get().statusCode();
