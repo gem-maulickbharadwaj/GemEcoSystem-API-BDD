@@ -42,6 +42,7 @@ public class utils {
             GemTestReporter.addTestStep("Response Message", response.getResponseMessage(), STATUS.INFO);
             if ((response.getResponseBody()) != null) {
                 GemTestReporter.addTestStep("Response Body", response.getResponseBody(), STATUS.INFO);
+                System.out.println("response goes here:---> " + response.getResponseBody());
             } else {
                 GemTestReporter.addTestStep("Response Body", "No-Response", STATUS.INFO);
             }

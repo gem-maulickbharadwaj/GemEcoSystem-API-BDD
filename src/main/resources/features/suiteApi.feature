@@ -4,15 +4,15 @@ Feature: suiteApi
     Given Set token endpoint and method "<endpoint>" and "<Method>"
     Then Verify Status code <Expected_status>
     Examples:
-      | endpoint | Method | Expected_status |
-      | suiteApi | get    | 200             |
+      | endpoint    | Method | Expected_status |
+      | suiteApiGet | get    | 200             |
 
   Scenario Outline: If the User does not have access to any projects (suiteApi)
     Given Set user wrong token endpoint and method "<endpoint>" and "<Method>"
     Then Verify Status code <Expected_status>
     Examples:
-      | endpoint | Method | Expected_status |
-      | suiteApi | get    | 200             |
+      | endpoint    | Method | Expected_status |
+      | suiteApiGet | get    | 200             |
 
   Scenario Outline: If Page No is invalid
     Given Setttz token endpoint and method "<endpoint>" and "<Method>"
@@ -25,15 +25,15 @@ Feature: suiteApi
     Given Set Wrong token endpoint and method "<endpoint>" and "<Method>"
     Then Verify Status code <Expected_status>
     Examples:
-      | endpoint | Method | Expected_status |
-      | suiteApi | get    | 403             |
+      | endpoint    | Method | Expected_status |
+      | suiteApiGet | get    | 403             |
 
   Scenario Outline: API to get the List of Suites in the Application when header is not given
     Given Set Empty token endpoint and method "<endpoint>" and "<Method>"
     Then Verify Status code <Expected_status>
     Examples:
-      | endpoint | Method | Expected_status |
-      | suiteApi | get    | 403             |
+      | endpoint    | Method | Expected_status |
+      | suiteApiGet | get    | 403             |
 
   Scenario Outline: API to Create the Suite in the Application
     Given Set post token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
