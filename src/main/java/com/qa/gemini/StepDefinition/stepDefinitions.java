@@ -50,6 +50,28 @@ public class stepDefinitions {
         status = utils.HitAPIWithToken(url, method, "Token Authentication", headers2).getStatus();
     }
 
+    @Given("^Set token when user does not have access endpoint and method \"(.*)\" and \"(.*)\"$")
+    public void get_api_admin_sc(String url, String method) throws Exception {
+        Map<String, String> headers2 = new HashMap<>();
+        String j = token2();
+        assert j != null;
+        String jnew = j.replaceAll("^\"|\"$", "");
+        headers2.put("Authorization", "Bearer " + jnew);
+        GemTestReporter.addTestStep("Bearer Token", "Bearer Token :" + jnew, STATUS.INFO);
+        status = utils.HitAPIWithToken(url, method, "Token Authentication", headers2).getStatus();
+    }
+
+    @Given("^Set wrong bridge token endpoint and method \"(.*)\" and \"(.*)\"$")
+    public void get_api_admin_sc2(String url, String method) throws Exception {
+        Map<String, String> headers2 = new HashMap<>();
+        String j = token2();
+        assert j != null;
+        String jnew = j.replaceAll("^\"|\"$", "");
+        headers2.put("Authorization", "Bearer " + jnew + "maulick");
+        GemTestReporter.addTestStep("Bearer Token", "Bearer Token :" + jnew, STATUS.INFO);
+        status = utils.HitAPIWithToken(url, method, "", headers2).getStatus();
+    }
+
     @Given("^Set user wrong token endpoint and method \"(.*)\" and \"(.*)\"$")
     public void setNewwAss(String url, String method) throws Exception {
         Map<String, String> headers2 = new HashMap<>();
@@ -210,7 +232,7 @@ public class stepDefinitions {
 
     @Given("^Set endpointt \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\"$")
     public void fileUpload(String url, String url1, String method, String SampleName) throws Exception {
-        FileWriter file = new FileWriter(System.getProperty("java.io.tmpdir")+"/jar.json");
+        FileWriter file = new FileWriter(System.getProperty("java.io.tmpdir") + "/jar.json");
         file.write("[\n" +
                 "  {\n" +
                 "    \"folderName\": \"maulick\",\n" +
@@ -221,7 +243,7 @@ public class stepDefinitions {
                 "  }\n" +
                 "]");
         file.close();
-        status = utils.FileUpload(url,System.getProperty("java.io.tmpdir")+"/jar.json", ProjectConfigData.getProperty("username"), utils.Gettoken2());
+        status = utils.FileUpload(url, System.getProperty("java.io.tmpdir") + "/jar.json", ProjectConfigData.getProperty("username"), utils.Gettoken2());
         Map<String, String> headers = new HashMap<>();
         String username = ProjectConfigData.getProperty("username");
         String bt = Gettoken2();
@@ -234,7 +256,7 @@ public class stepDefinitions {
 
     @Given("^Set endpoint with incorrect bridgetoken \"(.*)\"$")
     public void fileUpload2(String url) throws Exception {
-        FileWriter file = new FileWriter(System.getProperty("java.io.tmpdir")+"/jar.json");
+        FileWriter file = new FileWriter(System.getProperty("java.io.tmpdir") + "/jar.json");
         file.write("[\n" +
                 "  {\n" +
                 "    \"folderName\": \"maulick\",\n" +
@@ -245,7 +267,7 @@ public class stepDefinitions {
                 "  }\n" +
                 "]");
         file.close();
-        status = utils.FileUpload(url, System.getProperty("java.io.tmpdir")+"/jar.json", ProjectConfigData.getProperty("username"), utils.Gettoken2() + "maulick");
+        status = utils.FileUpload(url, System.getProperty("java.io.tmpdir") + "/jar.json", ProjectConfigData.getProperty("username"), utils.Gettoken2() + "maulick");
     }
 
     @Given("^Set endpoint without username \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\"$")
@@ -253,7 +275,7 @@ public class stepDefinitions {
         String j = token();
         assert j != null;
         String jnew = j.replaceAll("^\"|\"$", "");
-        FileWriter file = new FileWriter(System.getProperty("java.io.tmpdir")+"/jar.json");
+        FileWriter file = new FileWriter(System.getProperty("java.io.tmpdir") + "/jar.json");
         file.write("[\n" +
                 "  {\n" +
                 "    \"folderName\": \"maulick\",\n" +
@@ -264,7 +286,7 @@ public class stepDefinitions {
                 "  }\n" +
                 "]");
         file.close();
-        status = utils.FileUpload2(url, System.getProperty("java.io.tmpdir")+"/jar.json", jnew);
+        status = utils.FileUpload2(url, System.getProperty("java.io.tmpdir") + "/jar.json", jnew);
         Map<String, String> headers = new HashMap<>();
         String username = ProjectConfigData.getProperty("username");
         String bt = Gettoken2();
@@ -280,7 +302,7 @@ public class stepDefinitions {
         String j = token();
         assert j != null;
         String jnew = j.replaceAll("^\"|\"$", "");
-        FileWriter file = new FileWriter(System.getProperty("java.io.tmpdir")+"/jar.json");
+        FileWriter file = new FileWriter(System.getProperty("java.io.tmpdir") + "/jar.json");
         file.write("[\n" +
                 "  {\n" +
                 "    \"folderName\": \"maulick\",\n" +
@@ -291,7 +313,7 @@ public class stepDefinitions {
                 "  }\n" +
                 "]");
         file.close();
-        status = utils.AzurefileUpload(url, System.getProperty("java.io.tmpdir")+"/jar.json", jnew);
+        status = utils.AzurefileUpload(url, System.getProperty("java.io.tmpdir") + "/jar.json", jnew);
         Map<String, String> headers = new HashMap<>();
         String username = ProjectConfigData.getProperty("username");
         String bt = Gettoken2();
@@ -305,7 +327,7 @@ public class stepDefinitions {
     @Given("^Set endpoint without username in Bearer Token \"(.*)\"$")
     public void fileUpload5(String url) throws Exception {
         String jnew = "";
-        FileWriter file = new FileWriter(System.getProperty("java.io.tmpdir")+"/jar.json");
+        FileWriter file = new FileWriter(System.getProperty("java.io.tmpdir") + "/jar.json");
         file.write("[\n" +
                 "  {\n" +
                 "    \"folderName\": \"maulick\",\n" +
@@ -316,12 +338,12 @@ public class stepDefinitions {
                 "  }\n" +
                 "]");
         file.close();
-        status = utils.FileUpload2(url, System.getProperty("java.io.tmpdir")+"/jar.json", jnew);
+        status = utils.FileUpload2(url, System.getProperty("java.io.tmpdir") + "/jar.json", jnew);
     }
 
     @Given("^Set endpoint with username not present in db \"(.*)\"$")
     public void fileUpload4(String url) throws Exception {
-        FileWriter file = new FileWriter(System.getProperty("java.io.tmpdir")+"/jar.json");
+        FileWriter file = new FileWriter(System.getProperty("java.io.tmpdir") + "/jar.json");
         file.write("[\n" +
                 "  {\n" +
                 "    \"folderName\": \"maulick\",\n" +
@@ -332,7 +354,7 @@ public class stepDefinitions {
                 "  }\n" +
                 "]");
         file.close();
-        status = utils.FileUpload(url, System.getProperty("java.io.tmpdir")+"/jar.json", "", utils.Gettoken2());
+        status = utils.FileUpload(url, System.getProperty("java.io.tmpdir") + "/jar.json", "", utils.Gettoken2());
     }
 
     @Given("^Set endpoint with text \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\"$")
@@ -667,6 +689,21 @@ public class stepDefinitions {
         }
     }
 
+    @Given("^Set post token without steps endpoint and method \"(.*)\" and \"(.*)\" and \"(.*)\"$")
+    public void without_step_token(String url, String method, String SampleName) throws Exception {
+        try {
+            Map<String, String> headers = new HashMap<>();
+            String j = token();
+            assert j != null;
+            String jnew = j.replaceAll("^\"|\"$", "");
+            headers.put("Authorization", "Bearer " + jnew);
+            GemTestReporter.addTestStep("Bearer Token", "Bearer Token: " + jnew, STATUS.INFO);
+            status = utils.HitAPIPostToken(url, method, "", headers, SampleName).getStatus();
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Request Verification", "Request not executed", STATUS.FAIL);
+        }
+    }
+
     @Given("^Setttt post array token endpoint and method \"(.*)\" and \"(.*)\" and \"(.*)\"$")
     public void array_jsonn(String url, String method, String SampleName) throws Exception {
         try {
@@ -681,6 +718,37 @@ public class stepDefinitions {
             GemTestReporter.addTestStep("Request Verification", "Request not executed", STATUS.FAIL);
         }
     }
+
+    @Given("^Setttt post array wrong token endpoint and method \"(.*)\" and \"(.*)\" and \"(.*)\"$")
+    public void array_jsonn_admin(String url, String method, String SampleName) throws Exception {
+        try {
+            Map<String, String> headers = new HashMap<>();
+            String j = token2();
+            assert j != null;
+            String jnew = j.replaceAll("^\"|\"$", "");
+            headers.put("Authorization", "Bearer " + jnew);
+            GemTestReporter.addTestStep("Bearer Token", "Bearer Token: " + jnew, STATUS.INFO);
+            status = utils.hitApiWithArray(url, method, "Token Authentication", headers, SampleName).getStatus();
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Request Verification", "Request not executed", STATUS.FAIL);
+        }
+    }
+
+    @Given("^Setttt post array wrong bearer endpoint and method \"(.*)\" and \"(.*)\" and \"(.*)\"$")
+    public void array_jsonn_admin4(String url, String method, String SampleName) throws Exception {
+        try {
+            Map<String, String> headers = new HashMap<>();
+            String j = token2();
+            assert j != null;
+            String jnew = j.replaceAll("^\"|\"$", "");
+            headers.put("Authorization", "Bearer ");
+            GemTestReporter.addTestStep("Bearer Token", "Bearer Token: " + jnew, STATUS.INFO);
+            status = utils.hitApiWithArray(url, method, "Token Authentication", headers, SampleName).getStatus();
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Request Verification", "Request not executed", STATUS.FAIL);
+        }
+    }
+
 
     @Given("^Set post user wrong token endpoint and method \"(.*)\" and \"(.*)\" and \"(.*)\"$")
     public void postMmm(String url, String method, String SampleName) throws Exception {
