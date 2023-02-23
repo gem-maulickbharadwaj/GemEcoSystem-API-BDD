@@ -719,6 +719,110 @@ public class stepDefinitions {
         }
     }
 
+    @Given("^Test accept API for admin screen \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\"$")
+    public void array_admin_json12(String url, String url1, String url2, String method, String SampleName, String SampleName1, String SampleName2) throws Exception {
+        try {
+            Map<String, String> headers = new HashMap<>();
+            String j = token4();
+            assert j != null;
+            String jnew = j.replaceAll("^\"|\"$", "");
+            headers.put("Authorization", "Bearer " + jnew);
+            GemTestReporter.addTestStep("Bearer Token", "Bearer Token: " + jnew, STATUS.INFO);
+            utils.hitApiWithArray(url, method, "Token Authentication", headers, SampleName).getStatus();
+            Map<String, String> headers1 = new HashMap<>();
+            String j1 = token();
+            assert j1 != null;
+            String jnew1 = j1.replaceAll("^\"|\"$", "");
+            headers1.put("Authorization", "Bearer " + jnew1);
+            GemTestReporter.addTestStep("Bearer Token", "Bearer Token: " + jnew1, STATUS.INFO);
+            status = utils.hitApiWithArray(url1, method, "Token Authentication", headers1, SampleName1).getStatus();
+            utils.HitAPIPostToken(url2, method, "Token Authentication", headers1, SampleName2).getStatus();
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Request Verification", "Request not executed", STATUS.FAIL);
+        }
+    }
+
+    @Given("^Test accept with no bt API for admin screen \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\"$")
+    public void array_admin_json123(String url, String url1, String method, String SampleName, String SampleName1) throws Exception {
+        try {
+            Map<String, String> headers = new HashMap<>();
+            String j = token4();
+            assert j != null;
+            String jnew = j.replaceAll("^\"|\"$", "");
+            headers.put("Authorization", "Bearer " + jnew);
+            GemTestReporter.addTestStep("Bearer Token", "Bearer Token: " + jnew, STATUS.INFO);
+            utils.hitApiWithArray(url, method, "Token Authentication", headers, SampleName).getStatus();
+            Map<String, String> headers1 = new HashMap<>();
+            String j1 = token();
+            assert j1 != null;
+            String jnew1 = j.replaceAll("^\"|\"$", "");
+            headers1.put("Authorization", "Bearer ");
+            GemTestReporter.addTestStep("Bearer Token", "Bearer Token: " + jnew1, STATUS.INFO);
+            status = utils.hitApiWithArray(url1, method, "", headers1, SampleName1).getStatus();
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Request Verification", "Request not executed", STATUS.FAIL);
+        }
+    }
+
+    @Given("^Test decline API for admin screen \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\"$")
+    public void array_admin_json1234(String url, String url1, String method, String SampleName, String SampleName1) throws Exception {
+        try {
+            Map<String, String> headers = new HashMap<>();
+            String j = token4();
+            assert j != null;
+            String jnew = j.replaceAll("^\"|\"$", "");
+            headers.put("Authorization", "Bearer " + jnew);
+            GemTestReporter.addTestStep("Bearer Token", "Bearer Token: " + jnew, STATUS.INFO);
+            utils.hitApiWithArray(url, method, "Token Authentication", headers, SampleName).getStatus();
+            Map<String, String> headers1 = new HashMap<>();
+            String j1 = token();
+            assert j1 != null;
+            String jnew1 = j1.replaceAll("^\"|\"$", "");
+            headers1.put("Authorization", "Bearer " + jnew1);
+            GemTestReporter.addTestStep("Bearer Token", "Bearer Token: " + jnew1, STATUS.INFO);
+            status = utils.HitAPIPostToken(url1, method, "Token Authentication", headers1, SampleName1).getStatus();
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Request Verification", "Request not executed", STATUS.FAIL);
+        }
+    }
+
+    @Given("^Test decline with no bt API for admin screen \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\"$")
+    public void array_admin_json12345(String url, String url1, String method, String SampleName, String SampleName1) throws Exception {
+        try {
+            Map<String, String> headers = new HashMap<>();
+            String j = token4();
+            assert j != null;
+            String jnew = j.replaceAll("^\"|\"$", "");
+            headers.put("Authorization", "Bearer " + jnew);
+            GemTestReporter.addTestStep("Bearer Token", "Bearer Token: " + jnew, STATUS.INFO);
+            utils.hitApiWithArray(url, method, "Token Authentication", headers, SampleName).getStatus();
+            Map<String, String> headers1 = new HashMap<>();
+            String j1 = token();
+            assert j1 != null;
+            String jnew1 = j1.replaceAll("^\"|\"$", "");
+            headers1.put("Authorization", "Bearer ");
+            GemTestReporter.addTestStep("Bearer Token", "Bearer Token: " + jnew1, STATUS.INFO);
+            status = utils.HitAPIPostToken(url1, method, "", headers1, SampleName1).getStatus();
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Request Verification", "Request not executed", STATUS.FAIL);
+        }
+    }
+
+    @Given("^Set bearer token as empty in case of array \"(.*)\" and \"(.*)\" and \"(.*)\"$")
+    public void array_jsonn4(String url, String method, String SampleName) throws Exception {
+        try {
+            Map<String, String> headers = new HashMap<>();
+            String j = token();
+            assert j != null;
+            String jnew = j.replaceAll("^\"|\"$", "");
+            headers.put("Authorization", "Bearer ");
+            GemTestReporter.addTestStep("Bearer Token", "Bearer Token: " + jnew, STATUS.INFO);
+            status = utils.hitApiWithArray(url, method, "", headers, SampleName).getStatus();
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Request Verification", "Request not executed", STATUS.FAIL);
+        }
+    }
+
     @Given("^Setttt post array wrong token endpoint and method \"(.*)\" and \"(.*)\" and \"(.*)\"$")
     public void array_jsonn_admin(String url, String method, String SampleName) throws Exception {
         try {

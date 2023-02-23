@@ -126,47 +126,241 @@ Feature: Admin
       | endpoint  | Method | Expected_status |
       | adminApi2 | get    | 403             |
 
-  Scenario Outline: API To Change the Role Of User in the Project (admin screen)
+
+  Scenario Outline: API To Request Role in Project requesting for QA (admin screen)
     Given Setttt post array token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
     Then Verify Status code <Expected_status>
     Examples:
       | endpoint  | Method | Expected_status | SampleName    |
-      | adminApi3 | post   | 200             | adminScreen11 |
+      | adminApi5 | post   | 200             | adminScreen14 |
 
-  Scenario Outline: API To Change the Role Of User in the Project when pid is left as empty (admin screen)
+  Scenario Outline: API To Request Role in Project requesting for DEV (admin screen)
     Given Setttt post array token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
     Then Verify Status code <Expected_status>
     Examples:
       | endpoint  | Method | Expected_status | SampleName    |
-      | adminApi3 | post   | 400             | adminScreen12 |
+      | adminApi5 | post   | 200             | adminScreen15 |
 
-  Scenario Outline: API To Change the Role Of User in the Project when Role is left as empty (admin screen)
+  Scenario Outline: API To Request Role in Project requesting for VIEWER (admin screen)
     Given Setttt post array token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
     Then Verify Status code <Expected_status>
     Examples:
       | endpoint  | Method | Expected_status | SampleName    |
-      | adminApi3 | post   | 400             | adminScreen12 |
+      | adminApi5 | post   | 200             | adminScreen16 |
 
-  Scenario Outline:API To Change the Role Of User in the Project when user does not have access (admin screen)
-    Given Setttt post array wrong token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+  Scenario Outline: API To Request Role in Project requesting for ADMIN when you're already ADMIN (admin screen)
+    Given Setttt post array token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
     Then Verify Status code <Expected_status>
     Examples:
       | endpoint  | Method | Expected_status | SampleName    |
-      | adminApi3 | post   | 200             | adminScreen11 |
+      | adminApi5 | post   | 206             | adminScreen17 |
 
-  Scenario Outline:API To Change the Role Of User in the Project with no bearer token (admin screen)
-    Given Setttt post array wrong bearer endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+  Scenario Outline: API To Request Role in Project when PID is not found (admin screen)
+    Given Setttt post array token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
     Then Verify Status code <Expected_status>
     Examples:
       | endpoint  | Method | Expected_status | SampleName    |
-      | adminApi3 | post   | 403             | adminScreen11 |
+      | adminApi5 | post   | 200             | adminScreen19 |
+
+  Scenario Outline: API To Request Role in Project leaving role as empty (admin screen)
+    Given Setttt post array token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status | SampleName    |
+      | adminApi5 | post   | 206             | adminScreen18 |
+
+
+  Scenario Outline: API To Request Role in Project when bearer token is empty (admin screen)
+    Given Set bearer token as empty in case of array "<endpoint>" and "<Method>" and "<SampleName>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status | SampleName    |
+      | adminApi5 | post   | 403             | adminScreen14 |
+
+  Scenario Outline: API To Get Requested Users (admin screen)
+    Given Set token endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status |
+      | adminApi6 | get    | 200             |
+
+  Scenario Outline: API To Get Requested Users when user does not have access to projects (admin screen)
+    Given Set token when user does not have access endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status |
+      | adminApi6 | get    | 200             |
+
+  Scenario Outline: API To Get Requested Users when bridge token is wrong (admin screen)
+    Given Set wrong bridge token endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status |
+      | adminApi6 | get    | 403             |
+
+  Scenario Outline: API To Get Users on the project (admin screen)
+    Given Set token endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status |
+      | adminApi7 | get    | 200             |
+
+  Scenario Outline: API To Get Users on the project when user does not have access to projects (admin screen)
+    Given Set token when user does not have access endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status |
+      | adminApi7 | get    | 200             |
+
+  Scenario Outline: API To Get Users on the project when bridge token is wrong (admin screen)
+    Given Set wrong bridge token endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status |
+      | adminApi7 | get    | 403             |
+
+  Scenario Outline: API To Change the Role Of User in the Project when role is ADMIN (admin screen)
+    Given Setttt post array token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status | SampleName    |
+      | adminApi8 | post   | 200             | adminScreen20 |
+
+  Scenario Outline: API To Change the Role Of User in the Project when role is QA (admin screen)
+    Given Setttt post array token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status | SampleName    |
+      | adminApi8 | post   | 200             | adminScreen21 |
+
+  Scenario Outline: API To Change the Role Of User in the Project when role is DEV (admin screen)
+    Given Setttt post array token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status | SampleName    |
+      | adminApi8 | post   | 200             | adminScreen22 |
+
+  Scenario Outline: API To Change the Role Of User in the Project when role is VIEWER (admin screen)
+    Given Setttt post array token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status | SampleName    |
+      | adminApi8 | post   | 200             | adminScreen23 |
+
+  Scenario Outline: API To Change the Role Of User in the Project when role is empty (admin screen)
+    Given Setttt post array token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status | SampleName    |
+      | adminApi8 | post   | 206             | adminScreen24 |
+
+  Scenario Outline: API To Change the Role Of User in the Project when username is empty (admin screen)
+    Given Setttt post array token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status | SampleName    |
+      | adminApi8 | post   | 206             | adminScreen25 |
+
+  Scenario Outline: API To Change the Role Of User in the Project when bearer token is empty (admin screen)
+    Given Set bearer token as empty in case of array "<endpoint>" and "<Method>" and "<SampleName>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | Method | Expected_status | SampleName    |
+      | adminApi8 | post   | 403             | adminScreen20 |
 
   Scenario Outline: API To Accept Request of the User (admin screen)
-    Given Setttt post array token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
+    Given Test accept API for admin screen "<endpoint>" and "<endpoint1>" and "<endpoint2>" and "<Method>" and "<SampleName>" and "<SampleName1>" and "<SampleName2>"
     Then Verify Status code <Expected_status>
     Examples:
-      | endpoint  | Method | Expected_status | SampleName    |
-      | adminApi4 | post   | 200             | adminScreen11 |
+      | endpoint  | endpoint1 | endpoint2  | Method | Expected_status | SampleName    | SampleName1   | SampleName2   |
+      | adminApi5 | adminApi9 | adminApi10 | post   | 200             | adminScreen26 | adminScreen27 | adminScreen28 |
+
+  Scenario Outline: API To Accept Request of the User when bearer token is wrong (admin screen)
+    Given Test accept with no bt API for admin screen "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>" and "<SampleName1>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | endpoint1 | Method | Expected_status | SampleName    | SampleName1   |
+      | adminApi5 | adminApi9 | post   | 403             | adminScreen26 | adminScreen27 |
+
+  Scenario Outline: API To Reject Request of the User (admin screen)
+    Given Test decline API for admin screen "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>" and "<SampleName1>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | endpoint1  | Method | Expected_status | SampleName    | SampleName1   |
+      | adminApi5 | adminApi11 | post   | 200             | adminScreen26 | adminScreen29 |
+
+  Scenario Outline: API To Reject Request of the User when bt is wrong (admin screen)
+    Given Test decline with no bt API for admin screen "<endpoint>" and "<endpoint1>" and "<Method>" and "<SampleName>" and "<SampleName1>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint  | endpoint1  | Method | Expected_status | SampleName    | SampleName1   |
+      | adminApi5 | adminApi11 | post   | 403             | adminScreen26 | adminScreen29 |
+
+  Scenario Outline: API TO GET Project details By Id (admin screen)
+    Given Set token endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint   | Method | Expected_status |
+      | adminApi12 | get    | 200             |
+
+  Scenario Outline: API TO GET Project details By Id when project details are not found (admin screen)
+    Given Set token endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint   | Method | Expected_status |
+      | adminApi13 | get    | 200             |
+
+  Scenario Outline: API TO GET Project details By Id when bearer token is wrong (admin screen)
+    Given Set wrong bridge token endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint   | Method | Expected_status |
+      | adminApi12 | get    | 403             |
+
+  Scenario Outline: Api to delete the project (admin screen)
+    Given Set token endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint   | Method | Expected_status |
+      | adminApi15 | delete | 200             |
+
+  Scenario Outline: Api to delete the project when project details are not found  (admin screen)
+    Given Set token endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint   | Method | Expected_status |
+      | adminApi16 | delete | 200             |
+
+  Scenario Outline: API TO GET Project details By Id when bearer token is wrong (admin screen)
+    Given Set wrong bridge token endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint   | Method | Expected_status |
+      | adminApi15 | delete | 403             |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

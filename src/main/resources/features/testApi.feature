@@ -1,11 +1,11 @@
 Feature: testApi
 #
-#  Scenario Outline: API to get the List of Tests in the Application GEMPYP case
-#    Given Set token endpoint and method "<endpoint>" and "<Method>"
-#    Then Verify Status code <Expected_status>
-#    Examples:
-#      | endpoint         | Method | Expected_status |
-#      | testApiGetGempyp | get    | 200             |
+  Scenario Outline: API to get the List of Tests in the Application GEMPYP case
+    Given Set token endpoint and method "<endpoint>" and "<Method>"
+    Then Verify Status code <Expected_status>
+    Examples:
+      | endpoint         | Method | Expected_status |
+      | testApiGetGempyp | get    | 200             |
 
   Scenario Outline: API to get the List of Tests in the Application GEMJAR case
     Given Set token endpoint and method "<endpoint>" and "<Method>"

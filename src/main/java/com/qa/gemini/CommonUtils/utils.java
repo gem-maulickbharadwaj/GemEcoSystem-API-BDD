@@ -496,6 +496,31 @@ public class utils {
         }
     }
 
+    public static String token4() {
+        try {
+            String Token;
+            String urlss = ProjectConfigData.getProperty("Login");
+            String payload = ProjectSampleJson.getSampleDataString("Login5_sampleJson");
+            Request request = new Request();
+            request.setURL(urlss);
+            request.setMethod("Post");
+            request.setRequestPayload(payload);
+            Response response = ApiInvocation.handleRequest(request);
+            String Body = response.getResponseBody();
+            JsonParser parser = new JsonParser();
+            JsonObject Boddy = (JsonObject) parser.parse(Body);
+            JsonObject to = (JsonObject) Boddy.get("data");
+            Token = String.valueOf(to.get("token"));
+            return Token;
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Final token", "Some error occured while fetching token", STATUS.FAIL);
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+
     public static String Gettoken2() throws Exception {
         String url = ProjectConfigData.getProperty("Gettoken");
         String too = null;

@@ -49,12 +49,6 @@ Feature: suiteApi
       | endpoint | Method | Expected_status | SampleName |
       | suiteApi | post   | 200             | suiteApi   |
 #
-  Scenario Outline: Report Name Already Exists in the same project with same report name
-    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint | Method | Expected_status | SampleName |
-      | suiteApi | post   | 200             | suiteApi2  |
 
   Scenario Outline: API to update the Suite in the Application (suiteApi)
     Given Set post token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
@@ -70,12 +64,6 @@ Feature: suiteApi
       | endpoint | Method | Expected_status | SampleName |
       | suiteApi | put    | 200             | suiteApi3  |
 
-  Scenario Outline: Report Name Already Exists in the same project with same report name (suiteApi)
-    Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
-    Then Verify Status code <Expected_status>
-    Examples:
-      | endpoint | Method | Expected_status | SampleName |
-      | suiteApi | put    | 200             | suiteApi4  |
 
   Scenario Outline: s_id is not present in request (suiteApi)
     Given Sett posttt token endpoint and method "<endpoint>" and "<Method>" and "<SampleName>"
