@@ -7,9 +7,9 @@
   "tagName": "",
   "scenario": "",
   "emailReport": "y",
-  "emailTO": "maulick.bharadwaj@geminisolutions.com",
-  "emailCC": "garima.khare@geminisolutions.com",
-  "emailBCC": "dipanshu.kapoor@geminisolutions.com",
+  "emailTO": "shruti.kukreja@geminisolutions.com",
+  "emailCC": "Contact@gemecosystem.com",
+  "emailBCC": "maulick.bharadwaj@geminisolutions.com",
   "feature": "src/main/resources/features",
   "gemjarToken": "9fcc7a7a-cf7a-4b15-98f4-09f0b567b91f1676461220351",
   "gemjarSubID": "test_id",
@@ -248,7 +248,7 @@
     "adminApi12": "https://apis-beta.gemecosystem.com/v2/project/jsonformat?pid=1",
     "adminApi13": "https://apis-beta.gemecosystem.com/v2/project/jsonformat?pid=-1",
     "adminApi14": "https://apis.gemecosystem.com/v2/project?pid=",
-    "adminApi15": "https://apis-beta.gemecosystem.com/v2/project?pid=2401",
+    "adminApi15": "https://apis-beta.gemecosystem.com/v2/project?pid=2417",
     "adminApi16": "https://apis-beta.gemecosystem.com/v2/project?pid=-1"
   }
 }
